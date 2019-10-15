@@ -1,0 +1,19 @@
+.product-list {
+    width: 700px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.product-list article {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.product-list article p {
+    font-size: 16px;
+    color: #999;
+    margin-top:5px;
+    line-height: 24px;
+}

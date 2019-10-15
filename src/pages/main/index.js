@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import api from '../../services/api'
+import './styles.css'
 
 class Main extends Component {
 
@@ -7,18 +8,34 @@ class Main extends Component {
         products: []
     }
 
+    /* 
+        Cada vez que algo no state alterar, o método render é executado novamente.
+        
+    */
+
     componentDidMount() { // assim que o componente for mostrado em tela
         this.loadProducts()
     }
 
-    loadProducts = async () => {
+    loadProducts = async() => {
         const response = await api.get('/products')
-       this.setState({products: response.data.docs})
+        this.setState({ products: response.data.docs })
     }
 
     render() {
-        return (
-            <h3>Quantidade produtos {this.state.products.length}</h3>
+
+        const {products} = this.state 
+
+        return ( 
+        <div className = "product-list" >
+            {products.map( (product) => {
+                return <article key={product._id}>
+                    <strong>{product.title}</strong>
+                    <p>{product.description}</p>
+                    <a href="">Acessar</a>
+                </article>
+            })}
+        </div>
         )
     }
 }
