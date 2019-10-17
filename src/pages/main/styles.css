@@ -55,6 +55,15 @@
     transition: all 0.3s;
 }
 
+.product-list .actions button[disabled]{
+    opacity: 0.5;
+    cursor: default;
+}
+
+.product-list .actions button[disabled]:hover {
+    opacity: 0.5;
+}
+
 .product-list .actions button:hover {
     opacity: 0.7;
     background:#FFF;
