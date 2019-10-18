@@ -61,7 +61,7 @@ class Main extends Component {
                     return <article key={product._id}>
                         <strong>{product.title}</strong>
                         <p>{product.description}</p>
-                        <Link to={`/products/${product.id}`}>Acessar</Link>
+                        <Link to={`/product/${product._id}`}>Acessar</Link>
                     </article>
                 })
                 }
@@ -70,7 +70,7 @@ class Main extends Component {
                     <button disabled={page == 1} onClick={this.prevPage}>Anterior</button>
                     <button disabled={page == productInfo.pages} onClick={this.nextPage}>Próxima</button>
                 </div>
-            </div >
+            </div>
         )
     }
 }
